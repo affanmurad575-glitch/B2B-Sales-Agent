@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7fb">
+    <meta name="description" content="Qualify leads, handle objections, and close more B2B deals with your AI sales workspace.">
+    <title>Northstar — Autonomous B2B Sales</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="landing-view" id="landingView">
+      <header class="landing-nav">
+        <a class="brand" href="/" aria-label="Northstar home"><span class="brand-symbol">N</span><span>northstar<span class="brand-period">.</span></span></a>
+        <nav class="landing-links" aria-label="Main navigation">
+          <a href="#how-it-works">How it works</a>
+          <a href="#plans">Plans</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="button button-quiet" type="button" data-auth-open="login">Log in</button>
+          <button class="button button-primary" type="button" data-auth-open="signup">Get started</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR ALWAYS-ON SALES PARTNER</div>
+            <h1>Turn more conversations into <span class="gradient-text">customers.</span></h1>
+            <p>Meet your autonomous B2B sales agent. Qualify leads, answer objections, and keep every opportunity moving forward.</p>
+            <div class="hero-actions">
+              <button class="button button-primary button-large" type="button" data-auth-open="signup">Start selling smarter <span aria-hidden="true">→</span></button>
+              <a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-proof"><span class="proof-avatars"><i>A</i><i>M</i><i>J</i></span><span>Built for teams that never stop growing</span></div>
+          </div>
+          <div class="hero-visual" aria-label="Sales agent dashboard preview">
+            <div class="preview-window">
+              <div class="preview-top"><div class="window-dots"><i></i><i></i><i></i></div><span>Live lead workspace</span><span class="preview-live"><i></i> LIVE</span></div>
+              <div class="preview-content">
+                <div class="preview-profile"><div class="preview-avatar">JM</div><div><b>Jordan Miller</b><small>VP of Revenue · Acme Labs</small></div><span class="state-pill state-qualified">QUALIFIED</span></div>
+                <div class="preview-chat">
+                  <div class="chat-bubble agent-bubble">What does your team’s current qualification process look like?</div>
+                  <div class="chat-bubble prospect-bubble">We’re growing quickly and need a way to prioritize inbound leads.</div>
+                  <div class="chat-bubble agent-bubble">That makes sense. How soon are you looking to roll out a solution?</div>
+                </div>
+                <div class="preview-score"><div><span>Lead intent score</span><b>78 <small>/ 100</small></b></div><div class="progress-track"><span style="width:78%"></span></div><div class="score-foot"><span>Strong buying signals</span><span>↑ 18 this week</span></div></div>
+              </div>
+            </div>
+            <div class="floating-note"><span class="note-icon">✦</span><span><b>Opportunity spotted</b><small>Ready for a product demo</small></span></div>
+            <div class="hero-glow"></div>
+          </div>
+        </section>
+
+        <section class="feature-strip" id="how-it-works">
+          <div><span class="feature-number">01</span><h2>Start a conversation</h2><p>Bring every prospect into one focused workspace.</p></div>
+          <div><span class="feature-number">02</span><h2>Qualify in real time</h2><p>Surface buying signals and handle objections thoughtfully.</p></div>
+          <div><span class="feature-number">03</span><h2>Move deals forward</h2><p>Keep the next best action clear at every stage.</p></div>
+        </section>
+
+        <section class="landing-pricing" id="plans">
+          <div class="section-heading"><span class="eyebrow">SIMPLE, FLEXIBLE PLANS</span><h2>A better way to build your pipeline.</h2><p>Start free, then scale when your team is ready.</p></div>
+          <div class="landing-plan-row">
+            <article><span>Free Tier</span><b>$0 <small>/ month</small></b><p>Explore AI-powered lead conversations.</p><button class="button button-outline" data-auth-open="signup" type="button">Get started free</button></article>
+            <article class="landing-plan-featured"><span>Pro Agent <i>POPULAR</i></span><b>$49 <small>/ month</small></b><p>For growing teams ready to move faster.</p><button class="button button-primary" data-auth-open="signup" type="button">Try Pro Agent</button></article>
+            <article><span>Enterprise</span><b>$199 <small>/ month</small></b><p>Advanced support for ambitious teams.</p><button class="button button-outline" data-auth-open="signup" type="button">Talk to sales</button></article>
+          </div>
+        </section>
+      </main>
+      <footer class="landing-footer"><a class="brand" href="/"><span class="brand-symbol">N</span><span>northstar<span class="brand-period">.</span></span></a><span>Thoughtful conversations. Better outcomes.</span></footer>
+    </div>
+
+    <div class="app-shell" id="appShell" hidden>
+      <aside class="sidebar">
+        <a class="brand sidebar-brand" href="#" data-view-link="workspace"><span class="brand-symbol">N</span><span>northstar<span class="brand-period">.</span></span></a>
+        <div class="workspace-switch"><span class="workspace-logo">S</span><span><b>Sales workspace</b><small id="userEmail">Your account</small></span><span class="switch-caret">⌄</span></div>
+        <span class="nav-label">WORKSPACE</span>
+        <nav class="side-nav" aria-label="Workspace">
+          <button class="side-link active" type="button" data-view-link="workspace"><span class="nav-icon">◫</span>Agent workspace</button>
+          <button class="side-link" type="button" data-view-link="leads"><span class="nav-icon">♧</span>Leads <span class="nav-count" id="leadCount">0</span></button>
+          <button class="side-link" type="button" data-view-link="billing"><span class="nav-icon">◇</span>Plans & billing</button>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <div class="plan-mini"><div class="plan-mini-icon">✦</div><div><b id="sidebarPlan">Free Tier</b><small id="sidebarUsage">Up to 50 chats / month</small></div><button type="button" class="icon-button" data-view-link="billing" aria-label="Manage plan">→</button></div>
+        <button class="profile-button" id="logoutButton" type="button"><span class="profile-avatar" id="profileInitial">N</span><span class="profile-meta"><b id="profileEmail">Signed in</b><small>Sign out of workspace</small></span><span class="profile-dots">···</span></button>
+      </aside>
+
+      <main class="main-panel">
+        <header class="app-topbar">
+          <div><span class="breadcrumb-muted">Workspace</span><span class="breadcrumb-divider">/</span><b id="pageTitle">Agent workspace</b></div>
+          <div class="topbar-tools"><span class="connection-status"><i></i> Agent ready</span><button class="avatar-button" type="button" aria-label="Account"><span id="topInitial">N</span></button></div>
+        </header>
+
+        <section class="view-section active" id="workspaceView">
+          <div class="view-heading"><div><span class="eyebrow">SALES WORKSPACE</span><h1>Conversation dashboard</h1><p>Give every opportunity a thoughtful next step.</p></div><button class="button button-outline" type="button" id="newConversationButton">＋ New conversation</button></div>
+          <div class="dashboard-grid">
+            <section class="card conversation-card">
+              <div class="conversation-header">
+                <div class="prospect-info"><div class="prospect-avatar" id="leadAvatar">NP</div><div><b id="leadName">New prospect</b><small id="leadCompany">B2B sales conversation</small></div></div>
+                <div class="conversation-header-actions"><span class="state-pill state-cold" id="stateBadge">COLD</span><button class="icon-button" type="button" id="conversationMenu" aria-label="Conversation options">···</button></div>
+              </div>
+              <div class="conversation-messages" id="messages" aria-live="polite">
+                <div class="welcome-state"><span class="welcome-spark">✦</span><b>Your sales agent is ready</b><p>Send a message to start qualifying this lead. Your conversation and lead insights will stay in sync.</p></div>
+              </div>
+              <form class="composer" id="chatForm"><label class="sr-only" for="messageInput">Message your prospect</label><textarea id="messageInput" rows="1" maxlength="4000" placeholder="Ask a question or reply to your prospect…" required></textarea><div class="composer-bottom"><span>AI responses are reviewed in your workspace.</span><button class="button button-primary send-button" id="sendButton" type="submit">Send <span aria-hidden="true">↑</span></button></div></form>
+            </section>
+
+            <aside class="insights-column">
+              <section class="card score-card"><div class="card-title-row"><div><span class="card-eyebrow">LEAD INTENT</span><h2>Lead score</h2></div><span class="score-icon">↗</span></div><div class="score-number"><span id="scoreValue">0</span><small>/ 100</small></div><div class="progress-track score-track" id="scoreProgress" role="progressbar" aria-label="Lead score" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="scoreFill"></span></div><div class="score-description" id="scoreCaption">Start a conversation to understand buying intent.</div></section>
+              <section class="card journey-card"><div class="card-title-row"><div><span class="card-eyebrow">OPPORTUNITY</span><h2>Lead journey</h2></div><button class="icon-button" type="button" aria-label="Journey information">ⓘ</button></div><ol class="journey-list" id="stageList"><li class="active" data-stage="COLD"><span class="journey-marker"></span><span>New lead</span><small>01</small></li><li data-stage="QUALIFIED"><span class="journey-marker"></span><span>Qualified</span><small>02</small></li><li data-stage="OBJECTION_HANDLING"><span class="journey-marker"></span><span>Objection handling</span><small>03</small></li><li data-stage="CLOSING"><span class="journey-marker"></span><span>Closing</span><small>04</small></li></ol></section>
+              <section class="card next-step-card"><span class="next-step-star">✦</span><div><b>Keep the conversation going</b><p>Ask about goals, timeline, and what success looks like for their team.</p></div></section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view-section" id="leadsView">
+          <div class="view-heading"><div><span class="eyebrow">PIPELINE OVERVIEW</span><h1>Your leads</h1><p>Every conversation, contact, and opportunity in one place.</p></div><button class="button button-primary" type="button" id="createLeadButton">＋ Add lead</button></div>
+          <div class="metric-row"><article class="card small-metric"><span>Total leads</span><b id="totalLeads">0</b><small>In your workspace</small></article><article class="card small-metric"><span>Qualified</span><b id="qualifiedLeads">0</b><small>Ready for a next step</small></article><article class="card small-metric"><span>Avg. lead score</span><b id="averageScore">0</b><small>Across active leads</small></article></div>
+          <section class="card leads-card"><div class="table-toolbar"><div><h2>Lead management</h2><p>Search and manage your prospect pipeline.</p></div><label class="search-box"><span>⌕</span><input id="leadSearch" type="search" placeholder="Search leads…" aria-label="Search leads"></label></div><div class="table-scroll"><table><thead><tr><th>CONTACT</th><th>COMPANY</th><th>STAGE</th><th>LEAD SCORE</th><th>LAST ACTIVE</th><th></th></tr></thead><tbody id="leadsTableBody"></tbody></table><div class="empty-table" id="emptyLeads" hidden><span>♧</span><b>No leads yet</b><p>Add a lead or start a chat to build your pipeline.</p><button class="button button-primary" type="button" data-create-lead>Add your first lead</button></div></div></section>
+          <form class="card lead-form" id="leadForm" hidden><div class="form-heading"><div><h2>Add a lead</h2><p>Create a contact to start a sales conversation.</p></div><button class="icon-button" type="button" id="cancelLeadButton" aria-label="Close add lead form">×</button></div><label>Name<input name="name" required maxlength="120" placeholder="e.g. Jordan Miller"></label><label>Company<input name="company" maxlength="120" placeholder="e.g. Acme Labs"></label><label>Email<input name="email" type="email" maxlength="254" placeholder="jordan@acme.com"></label><div class="form-actions"><button class="button button-outline" type="button" id="cancelLeadButtonBottom">Cancel</button><button class="button button-primary" type="submit">Create lead</button></div></form>
+        </section>
+
+        <section class="view-section" id="billingView">
+          <div class="view-heading"><div><span class="eyebrow">PLANS & BILLING</span><h1>Find your growth plan</h1><p>Upgrade your workspace as your pipeline grows.</p></div></div>
+          <div class="billing-current card"><div class="billing-current-icon">✦</div><div><span class="card-eyebrow">CURRENT PLAN</span><h2 id="currentPlanName">Free Tier</h2><p id="currentPlanDescription">A great place to start building your pipeline.</p></div><span class="current-plan-badge">ACTIVE</span></div>
+          <div class="billing-plans">
+            <article class="card billing-plan"><span class="plan-kicker">GET STARTED</span><h2>Free Tier</h2><p class="plan-price">$0 <small>/ month</small></p><p class="plan-description">Explore AI-powered sales conversations with the essentials.</p><ul><li>50 AI conversations / month</li><li>Lead management workspace</li><li>Lead intent scoring</li><li>Email support</li></ul><button class="button button-outline plan-button" data-plan="free" type="button">Current free plan</button></article>
+            <article class="card billing-plan featured-plan"><span class="plan-kicker">GROW FASTER <i>POPULAR</i></span><h2>Pro Agent</h2><p class="plan-price">$49 <small>/ month</small></p><p class="plan-description">More room to qualify leads and keep your pipeline moving.</p><ul><li>Unlimited AI conversations</li><li>Lead management workspace</li><li>Advanced lead scoring</li><li>Priority support</li></ul><button class="button button-primary plan-button" data-plan="pro" type="button">Choose Pro Agent</button></article>
+            <article class="card billing-plan"><span class="plan-kicker">SCALE WITH CONFIDENCE</span><h2>Enterprise</h2><p class="plan-price">$199 <small>/ month</small></p><p class="plan-description">A powerful sales agent for ambitious, high-growth teams.</p><ul><li>Everything in Pro Agent</li><li>Unlimited AI conversations</li><li>Dedicated workspace support</li><li>Priority onboarding</li></ul><button class="button button-outline plan-button" data-plan="enterprise" type="button">Choose Enterprise</button></article>
+          </div>
+          <p class="billing-disclaimer">Checkout is a demo flow. No payment details are collected or charged.</p>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="authModal" hidden>
+      <section class="modal-card auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+        <button class="modal-close" type="button" data-modal-close aria-label="Close">×</button>
+        <a class="brand modal-brand" href="#"><span class="brand-symbol">N</span><span>northstar<span class="brand-period">.</span></span></a>
+        <span class="eyebrow">YOUR NEXT OPPORTUNITY STARTS HERE</span><h2 id="authTitle">Welcome to your workspace</h2><p class="modal-copy" id="authDescription">Sign in to continue your sales conversations.</p>
+        <div class="auth-tabs"><button type="button" class="active" data-auth-mode="login">Log in</button><button type="button" data-auth-mode="signup">Create account</button></div>
+        <form id="authForm"><label>Email address<input type="email" name="email" autocomplete="email" required maxlength="254" placeholder="you@company.com"></label><label>Password<input type="password" name="password" autocomplete="current-password" required minlength="10" maxlength="128" placeholder="At least 10 characters"></label><p class="form-error" id="authError" role="alert"></p><button class="button button-primary button-full" id="authSubmit" type="submit">Log in to workspace</button></form>
+        <p class="privacy-note">Your workspace is private to your account.</p>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="checkoutModal" hidden>
+      <section class="modal-card checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+        <button class="modal-close" type="button" data-modal-close aria-label="Close">×</button><span class="checkout-icon">✦</span>
+        <span class="eyebrow">DEMO CHECKOUT</span><h2 id="checkoutTitle">Upgrade your workspace</h2><p class="modal-copy" id="checkoutDescription">You’re choosing a new plan.</p>
+        <p class="checkout-note">This interactive preview does not collect payment details or charge you.</p>
+        <p class="form-error" id="checkoutError" role="alert"></p>
+        <button class="button button-primary button-full" id="confirmCheckout" type="button">Confirm plan</button>
+      </section>
+    </div>
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  </body>
+</html>
