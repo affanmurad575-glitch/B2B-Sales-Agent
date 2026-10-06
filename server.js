@@ -259,9 +259,13 @@ app.use((error, req, res, next) => {
   return res.status(status).json({ error: status === 400 ? 'Request body must be valid JSON.' : 'Unexpected server error.' });
 });
 
-app.listen(port, () => {
-  console.log(`B2B Sales Agent is running at http://localhost:${port}`);
-  if (!isSupabaseConfigured) {
-    console.log('Using in-memory storage. Configure SUPABASE_URL and SUPABASE_KEY for persistent storage.');
-  }
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`B2B Sales Agent is running at http://localhost:${port}`);
+    if (!isSupabaseConfigured) {
+      console.log('Using in-memory storage. Configure SUPABASE_URL and SUPABASE_KEY for persistent storage.');
+    }
+  });
+}
+
+module.exports = app;
